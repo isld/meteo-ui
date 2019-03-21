@@ -1,0 +1,32 @@
+import React from 'react';
+import { Paper } from '@material-ui/core';
+
+import styles from './styles.module.scss';
+
+export const PERCENTAGE_TYPES = {
+  DEFAULT: 'percentage',
+  HUMIDITY: 'humidity',
+};
+
+const Percentage = (props) => {
+  const { value, type = PERCENTAGE_TYPES.DEFAULT } = props;
+
+  let title;
+
+  switch (type) {
+    case PERCENTAGE_TYPES.HUMIDITY:
+      title = 'Humidity';
+      break;
+    default:
+      title = 'Percentage';
+  }
+
+  return (
+    <Paper>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.value}>{value}%</div>
+    </Paper>
+  );
+};
+
+export default Percentage;

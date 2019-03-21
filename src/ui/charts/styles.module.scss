@@ -1,0 +1,15 @@
+.container {
+  padding: 16px;
+
+  .chart {
+    background: blue;
+
+    .line {
+      fill: none;
+      stroke: rgba(90, 90, 100, 1);
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-width: 3;
+    }
+  }
+}
