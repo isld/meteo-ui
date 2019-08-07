@@ -179,7 +179,7 @@ export default class Temperature extends React.PureComponent {
               <path
                 d={line}
                 ref={this._line}
-                className={styles.line}
+                className={classNames(styles.line, styles.outside)}
               />
             </g>
           </svg>

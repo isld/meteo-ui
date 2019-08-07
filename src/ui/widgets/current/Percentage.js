@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
+import { Paper, Switch } from '@material-ui/core';
 
 import styles from './styles.module.scss';
 
@@ -9,7 +9,7 @@ export const PERCENTAGE_TYPES = {
 };
 
 const Percentage = (props) => {
-  const { value, type = PERCENTAGE_TYPES.DEFAULT } = props;
+  const { value, type = PERCENTAGE_TYPES.DEFAULT, enableSwitch = false } = props;
 
   let title;
 
@@ -22,9 +22,14 @@ const Percentage = (props) => {
   }
 
   return (
-    <Paper>
+    <Paper className={styles.container}>
       <div className={styles.title}>{title}</div>
       <div className={styles.value}>{value}%</div>
+      {enableSwitch && (
+        <div>
+          <Switch />
+        </div>
+      )}
     </Paper>
   );
 };

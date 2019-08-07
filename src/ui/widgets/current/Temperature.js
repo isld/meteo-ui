@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
+import { Paper, Switch } from '@material-ui/core';
 
 import styles from './styles.module.scss';
 
@@ -11,7 +11,7 @@ export const TEMPERATURE_TYPES = {
 };
 
 const Temperature = (props) => {
-  const { value, type = TEMPERATURE_TYPES.DEFAULT } = props;
+  const { value, type = TEMPERATURE_TYPES.DEFAULT, enableSwitch = false } = props;
 
   let title;
 
@@ -30,9 +30,14 @@ const Temperature = (props) => {
   }
 
   return (
-    <Paper>
+    <Paper className={styles.container}>
       <div className={styles.title}>{title}</div>
       <div className={styles.value}>{value}</div>
+      {enableSwitch && (
+        <div>
+          <Switch />
+        </div>
+      )}
     </Paper>
   );
 };
