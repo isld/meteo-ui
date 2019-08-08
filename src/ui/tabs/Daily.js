@@ -22,27 +22,27 @@ const Daily = props => {
           <Grid container spacing={16} justify="space-between">
             <Grid item xs={3}>
               <Temperature
-                value={FtoC(current.outTemp).toFixed(1)}
+                value={FtoC(current.tempf).toFixed(1)}
                 type={TEMPERATURE_TYPES.OUTSIDE}
               />
             </Grid>
             <Grid item xs={3}>
               <Temperature
-                value={FtoC(current.inTemp).toFixed(1)}
+                value={FtoC(current.indoortempf).toFixed(1)}
                 type={TEMPERATURE_TYPES.INSIDE}
                 enableSwitch={true}
               />
             </Grid>
             <Grid item xs={3}>
               <Temperature
-                value={FtoC(current.windchill).toFixed(1)}
+                value={FtoC(current.windchillf).toFixed(1)}
                 type={TEMPERATURE_TYPES.WIND}
                 enableSwitch={true}
               />
             </Grid>
             <Grid item xs={3}>
               <Percentage
-                value={current.outHumidity.toFixed(1)}
+                value={current.humidity.toFixed(1)}
                 type={PERCENTAGE_TYPES.HUMIDITY}
                 enableSwitch={true}
               />
