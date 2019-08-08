@@ -11,7 +11,7 @@ import { Daily, Weekly, Monthly, Yearly, Camera } from './tabs';
 import styles from './styles.module.scss';
 
 class Main extends Component {
-  fetchData = () => (axios.get('http://localhost:8088/today'));
+  fetchData = () => (axios.get('http://localhost:8088/api/weatherstation/current'));
 
   handleData = response => {
     if (response) {
